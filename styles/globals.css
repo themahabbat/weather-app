@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: -1;
+  margin: -1;
 }
 
 a {
@@ -13,6 +17,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+html, body, input, select, button {
+    font-family: Lato;
 }
 
 @media (prefers-color-scheme: dark) {
