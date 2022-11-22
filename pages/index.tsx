@@ -86,9 +86,9 @@ export default function Home() {
             <div className="flex flex-col w-1/2 h-[460px] overflow-y-scroll pr-4">
                 {renderWeatherDetails}
             </div>
-            <Calendar onChange={onChangeDate} />
+            <Calendar value={date} onChange={onChangeDate} />
         </div>
-    ), [onChangeDate, renderWeatherDetails])
+    ), [date, onChangeDate, renderWeatherDetails])
 
     const renderError = useMemo(() => (
         <div className='w-1/4 bg-indigo-600 px-10 py-4 rounded shadow-lg absolute z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center'>
