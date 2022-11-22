@@ -24,7 +24,7 @@ export default function Home() {
 
     useEffect(() => {
         import("@lottiefiles/lottie-player");
-    });
+    }, [])
 
     const fetchWeather = useCallback(async () => {
         try {
@@ -74,11 +74,13 @@ export default function Home() {
 
     const renderWeatherDetails = useMemo(() => weather.map((weather: WeatherData) => <WeatherDetail key={weather.dt} detail={weather} />), [weather])
 
-    const renderLoading = useMemo(() => (
-        <div className='w-full h-96 flex items-center justify-center p-8'>
-            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_kljxfos1.json" background="transparent" speed="1" className="w-96 h-96" loop autoplay></lottie-player>
-        </div>
-    ), [])
+    const renderLoading = useMemo(() => {
+        if (typeof window !== undefined) return (
+            <div className='w-full h-96 flex items-center justify-center p-8'>
+                <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_kljxfos1.json" background="transparent" speed="1" className="w-96 h-96" loop autoplay></lottie-player>
+            </div>
+        )
+    }, [])
 
     const renderData = useMemo(() => (
         <div className='flex items-start justify-between'>

@@ -1,5 +1,7 @@
-export declare namespace JSX {
+import * as React from 'react';
+
+declare namespace JSX {
     interface IntrinsicElements {
-      "lottie-player": any;
+        'lottie-play': any;
     }
-  }
+}
