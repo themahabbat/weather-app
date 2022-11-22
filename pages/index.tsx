@@ -13,7 +13,6 @@ import WeatherDetail from '../components/WeatherDetail'
 import moment from 'moment'
 import { filterList } from '../helpers/weather'
 
-
 export default function Home() {
     const dispatch = useAppDispatch()
     const { cities, activeCity } = useSelector((state: RootState) => state.weather)

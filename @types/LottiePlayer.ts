@@ -1,7 +1,9 @@
-import * as React from 'react';
-
-declare namespace JSX {
-    interface IntrinsicElements {
-        'lottie-play': any;
+declare global {
+    namespace JSX {
+        interface IntrinsicElements {
+            "lottie-player": any;
+        }
     }
 }
+
+export { }
