@@ -1,24 +1,27 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "..";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { City } from "../../@types/City";
+import { cities } from "../../constants/cities";
 
 export interface WeatherState {
+    cities: City[],
+    activeCity: City | null;
 }
 
-// Initial state
 const initialState: WeatherState = {
+    cities: cities,
+    activeCity: null
 };
 
-// Actual Slice
 export const weatherSlice = createSlice({
-  name: "weather",
-  initialState,
-  reducers: {
-    // setAuthState(state, action) {
-    //   state.authState = action.payload;
-    // },
-  },
+    name: "weather",
+    initialState,
+    reducers: {
+        setActiveCity(state: WeatherState, action: PayloadAction<City>) {
+            state.activeCity = action.payload
+        }
+    },
 });
 
-export const {  } = weatherSlice.actions;
+export const { setActiveCity } = weatherSlice.actions;
 
 export default weatherSlice.reducer;
